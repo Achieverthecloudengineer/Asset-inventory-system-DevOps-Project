@@ -1,25 +1,14 @@
-This comprehensive guide is designed to be published as a high-level technical blog post or portfolio case study. It demonstrates your ability to navigate the full lifecycle of a cloud-hosted application on **AWS EC2**, from writing performant code to implementing enterprise-grade process management and data recovery.
+# Engineering a Resilient Asset Management Appliance on AWS EC2
+
+This comprehensive guide is designed as a high-level technical blog post or portfolio case study. It demonstrates your ability to navigate the full lifecycle of a cloud-hosted application on **AWS EC2**, from writing performant code to implementing enterprise-grade process management and data recovery.
 
 ---
 
-# Engineering a Resilient Asset Management Appliance on AWS EC2
 
 ## Executive Summary
 
 This project showcases the deployment of **InventoryOS**, a professional-grade internal tool for infrastructure tracking. Moving beyond local development, this guide covers the architectural transition to **AWS**, implementing **PM2** for process resiliency, and **Cron** for automated disaster recovery.
 
-## Tools and Technologies needed:
-
-- Aws EC2
-- Pm2
-
-
-
-# 📦 InventoryOS: Resilient Internal Asset Tracking
-
-A professional-grade, full-stack inventory management system engineered for high availability and minimal operational overhead. This project demonstrates a **"Simplicity-First"** architecture, opting for a unified Node.js appliance over complex build-chains to optimize deployment speed and maintainability.
-
----
 
 ## 🏗️ Architectural Overview
 
@@ -29,35 +18,17 @@ This system follows a **Monolithic Appliance** pattern, where the Express.js bac
 * **Backend:** Express.js REST API
 * **Frontend:** React 18 (Client-side rendering via CDN)
 * **Styling:** Custom CSS3 (Obsidian/DevOps Dark Mode)
-* **Process Management:** Linux Systemd (Daemonization)
+* **Process Management:** PM2 (Daemonization)
+* **Cloud:** AWS EC2 Service
 
----
 
-## 🚀 Key Features
-
-* **Full CRUD Lifecycle:** Create, Read, Update, and Delete assets via a unified dashboard.
-* **Real-time Client-Side Filtering:** High-performance search using React `useMemo` hooks to minimize server-side CPU cycles.
-* **DevOps Aesthetics:** Responsive, dark-mode UI utilizing **Lucide-React** icons for a professional command-center feel.
-* **Service Persistence:** Configured as a background daemon to survive system reboots and process crashes.
-
----
-
-## 🛠️ Step-by-Step Implementation
-
-### 1. Backend Engineering (`app.js`)
-
-The server-side logic focuses on predictable routing and lightweight data handling.
-
-`
-
----
-
+## 🛠️ Step-by-Step From Povisioning on CLoud to Implementation for both Backend and Frontend
 
 ## 1. Provisioning the Cloud Environment (AWS EC2)
 
 Before deploying code, Ensure your configuration matches mine as used on AWS.
 
-### Step 1: Instance Launch
+### Instance Launch
 
 * **AMI:** Amazon Linux 2023 or Ubuntu 22.04 LTS.
 * **Instance Type:** t3.micro (Free Tier eligible).
@@ -66,16 +37,13 @@ Before deploying code, Ensure your configuration matches mine as used on AWS.
 
 
 
-### Step 2: Environment Preparation
+### Environment Preparation
 
-Connect via SSH and install the Node.js runtime from below website, ensure to select linux as shown below
-
-https://nodejs.org/en/download
+Connect via SSH and install the Node.js runtime from below website, ensure to select linux as shown below `https://nodejs.org/en/download`
 
 
 ```bash
 sudo dnf update -y
-
 ```
 
 ![alt text](image.png)
@@ -250,6 +218,12 @@ This section we will create the UI. The UI is a **Single Page Application (SPA)*
 
 ##  Deploying your code and Testing it
 
+* `npm init -y`
+* `npm install`
+* `node app.js`
+
+* Next thing is to either use curl or we navigate to the browser and test using `http://127.0.0.1:{used-port}`
+
 
 
 
@@ -351,4 +325,3 @@ After deployment, verify the stack using these commands:
 
 By deploying on **AWS EC2** with **PM2** and **Automated Backups**, this project demonstrates a complete understanding of the **Reliability Pillar** of the AWS Well-Architected Framework.
 
-**Would you like me to help you configure an Nginx Reverse Proxy with SSL so you can access this app via a secure domain name?**
