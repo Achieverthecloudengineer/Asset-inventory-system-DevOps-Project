@@ -1,4 +1,4 @@
-# Engineering a Resilient Asset Management Appliance on AWS EC2
+# DevOps Engineering Project: A Resilient Asset Management Appliance on AWS EC2
 
 This comprehensive guide is designed as a high-level technical blog post or portfolio case study. It demonstrates your ability to navigate the full lifecycle of a cloud-hosted application on **AWS EC2**, from writing performant code to implementing enterprise-grade process management and data recovery.
 
